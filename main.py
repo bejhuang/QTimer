@@ -4,7 +4,7 @@ import os
 
 
 from PySide2.QtWidgets import QApplication, QWidget
-from PySide2.QtCore import QFile
+from PySide2.QtCore import QFile, QCoreApplication, Qt
 from PySide2.QtUiTools import QUiLoader
 
 
@@ -22,6 +22,7 @@ class QTimer(QWidget):
         ui_file.close()
 
 if __name__ == "__main__":
+    QCoreApplication.setAttribute(Qt.AA_ShareOpenGLContexts)
     app = QApplication([])
     widget = QTimer()
     widget.show()
